@@ -1,0 +1,25 @@
+body {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.gallery-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+.img-container {
+    border: 1px solid orange;
+    height: 80%;
+    width: 80%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
