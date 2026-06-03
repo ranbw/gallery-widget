@@ -12,6 +12,7 @@ backBtn.addEventListener("click", clickBack);
 
 //Sets the background to first image in collection
 container.style.backgroundImage = "url('" + images[0] + "')";
+backBtn.disabled = true;
 
 let index = 0;
 let indexMsg = " of " + images.length;
@@ -21,23 +22,32 @@ indexDisplay.textContent = index + 1 + indexMsg;
 function clickNext() {
     console.log("Clicked next");
     if (images[index + 1] === undefined) {
-        return;
     } else {
         index += 1;
         container.style.backgroundImage = "url('" + images[index] + "')";
         indexDisplay.textContent = index + 1 + indexMsg;
     }
+    updateButtonStatus();
 }
 
 function clickBack() {
     console.log("Clicked back")
     if (index - 1 < 0) {
-        return;
+
     } else {
         index -= 1;
         container.style.backgroundImage = "url('" + images[index] + "')";
         indexDisplay.textContent = index + 1 + indexMsg;
     }
+
+    updateButtonStatus();
+}
+
+function updateButtonStatus() {
+    const back_enabled = index > 0;
+    backBtn.disabled = !back_enabled;
+    const next_enabled = index < images.length - 1;
+    nextBtn.disabled = !next_enabled; 
 }
 
 
