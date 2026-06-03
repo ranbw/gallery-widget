@@ -13,7 +13,8 @@ backBtn.addEventListener("click", clickBack);
 container.style.backgroundImage = "url('" + images[0] + "')";
 
 let index = 0;
-container.textContent = index + 1;
+let indexMsg = " of " + images.length;
+container.textContent = index + 1 + indexMsg;
 
 
 function clickNext() {
@@ -23,7 +24,7 @@ function clickNext() {
     } else {
         index += 1;
         container.style.backgroundImage = "url('" + images[index] + "')";
-        container.textContent = index + 1;
+        container.textContent = index + 1 + indexMsg;
     }
 }
 
@@ -34,7 +35,7 @@ function clickBack() {
     } else {
         index -= 1;
         container.style.backgroundImage = "url('" + images[index] + "')";
-        container.textContent = index + 1;
+        container.textContent = index + 1 + indexMsg;
     }
 }
 
