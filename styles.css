@@ -6,16 +6,22 @@ body {
 } 
 
 .gallery-container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
     height: 80%;
+    gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
 }
 
 .img-container {
-    border: 1px solid orange;
+    border: 1px solid black;
     height: 80%;
     width: 80%;
     background-position: center;
