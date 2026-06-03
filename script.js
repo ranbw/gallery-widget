@@ -12,32 +12,30 @@ backBtn.addEventListener("click", clickBack);
 //Sets the background to first image in collection
 container.style.backgroundImage = "url('" + images[0] + "')";
 
-let count = 0;
-container.textContent = count + 1;
+let index = 0;
+container.textContent = index + 1;
 
 
 function clickNext() {
     console.log("Clicked next");
-    count += 1;
-    if (container.style.backgroundImage === null) {
+    if (images[index + 1] === undefined) {
         return;
     } else {
-        container.style.backgroundImage = "url('" + images[count] + "')";
-        container.textContent=count + 1;
-        console.log(count);
+        index += 1;
+        container.style.backgroundImage = "url('" + images[index] + "')";
+        container.textContent = index + 1;
     }
-
 }
 
 function clickBack() {
     console.log("Clicked back")
-    count -= 1;
-    if (count < 0) {
+    if (index - 1 < 0) {
         return;
+    } else {
+        index -= 1;
+        container.style.backgroundImage = "url('" + images[index] + "')";
+        container.textContent = index + 1;
     }
-    container.style.backgroundImage = "url('" + images[count] + "')";
-    container.textContent=count + 1;
-    console.log(count);
 }
 
 
